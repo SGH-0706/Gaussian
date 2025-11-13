@@ -13,6 +13,7 @@ Read the number of unknowns n. Create an (n x (n+1)) augmented matrix to hold co
 
 Step 2: Forward Elimination
 Convert the matrix into an upper triangular form (all elements below the main diagonal become zero). For each row i from 0 to n-1: Pivot Check: If the diagonal element a[i][i] is 0, the method can't proceed (division by zero) – exit with an error. For each row j below i (from i+1 to n-1): Compute the elimination ratio: ratio= a[i][i]a[j][i]​Subtract ratio * row i from row j to eliminate the element at column i: a[j][k]=a[j][k]−ratio⋅a[i][k]for all k∈[0,n] 
+
 Step 3: Back Substitution Now the matrix is upper triangular. Solve for variables starting from the last row. Solve the last variable: x[n−1]= a[n−1][n]/a[n−1][n−1]​For i from n-2 down to 0: Initialize: x[i]=a[i][n] Subtract the known values: x[i]=x[i]−a[i][j]⋅x[j]for all j∈[i+1,n−1] Finally: x[i]= x[i]/a[i][i]​
 
 Step 4: Output the Solution
